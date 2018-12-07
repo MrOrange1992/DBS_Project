@@ -1,0 +1,218 @@
+Wirshark sniff can be saved as pcap
+Tool Tshark can read tcap and save as json: tshark -T json -r testSniff.pcap > outFile.json
+
+outFile.json looks like this for each packet:
+	{
+    "_index": "packets-2018-11-29",
+    "_type": "pcap_file",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame": {
+          "frame.encap_type": "1",
+          "frame.time": "Nov 29, 2018 16:41:10.364212000 CET",
+          "frame.offset_shift": "0.000000000",
+          "frame.time_epoch": "1543506070.364212000",
+          "frame.time_delta": "0.496470000",
+          "frame.time_delta_displayed": "0.496470000",
+          "frame.time_relative": "2.640352000",
+          "frame.number": "9",
+          "frame.len": "216",
+          "frame.cap_len": "216",
+          "frame.marked": "0",
+          "frame.ignored": "0",
+          "frame.protocols": "eth:ethertype:ip:udp:nbdgm:smb:browser"
+        },
+        "eth": {
+          "eth.dst": "ff:ff:ff:ff:ff:ff",
+          "eth.dst_tree": {
+            "eth.dst_resolved": "Broadcast",
+            "eth.addr": "ff:ff:ff:ff:ff:ff",
+            "eth.addr_resolved": "Broadcast",
+            "eth.lg": "1",
+            "eth.ig": "1"
+          },
+          "eth.src": "00:1c:42:00:00:08",
+          "eth.src_tree": {
+            "eth.src_resolved": "Parallel_00:00:08",
+            "eth.addr": "00:1c:42:00:00:08",
+            "eth.addr_resolved": "Parallel_00:00:08",
+            "eth.lg": "0",
+            "eth.ig": "0"
+          },
+          "eth.type": "0x00000800"
+        },
+        "ip": {
+          "ip.version": "4",
+          "ip.hdr_len": "20",
+          "ip.dsfield": "0x00000000",
+          "ip.dsfield_tree": {
+            "ip.dsfield.dscp": "0",
+            "ip.dsfield.ecn": "0"
+          },
+          "ip.len": "202",
+          "ip.id": "0x0000af3c",
+          "ip.flags": "0x00000000",
+          "ip.flags_tree": {
+            "ip.flags.rb": "0",
+            "ip.flags.df": "0",
+            "ip.flags.mf": "0",
+            "ip.frag_offset": "0"
+          },
+          "ip.ttl": "64",
+          "ip.proto": "17",
+          "ip.checksum": "0x00004640",
+          "ip.checksum.status": "2",
+          "ip.src": "10.211.55.2",
+          "ip.addr": "10.211.55.2",
+          "ip.src_host": "10.211.55.2",
+          "ip.host": "10.211.55.2",
+          "ip.dst": "10.211.55.255",
+          "ip.addr": "10.211.55.255",
+          "ip.dst_host": "10.211.55.255",
+          "ip.host": "10.211.55.255"
+        },
+        "udp": {
+          "udp.srcport": "138",
+          "udp.dstport": "138",
+          "udp.port": "138",
+          "udp.port": "138",
+          "udp.length": "182",
+          "udp.checksum": "0x00009d15",
+          "udp.checksum.status": "2",
+          "udp.stream": "3"
+        },
+        "nbdgm": {
+          "nbdgm.type": "17",
+          "nbdgm.flags": "0x00000002",
+          "nbdgm.flags_tree": {
+            "nbdgm.next": "0",
+            "nbdgm.first": "1",
+            "nbdgm.node_type": "0"
+          },
+          "nbdgm.dgram_id": "0x00004e4b",
+          "nbdgm.src.ip": "10.211.55.2",
+          "nbdgm.src.port": "0",
+          "nbdgm.dgram_len": "160",
+          "nbdgm.pkt_offset": "0",
+          "nbdgm.source_name": "FLEXBOOKPRO<00>",
+          "nbdgm.destination_name": "TECHNIKUM<1d>"
+        },
+        "smb": {
+          "SMB Header": {
+            "smb.server_component": "0x424d53ff",
+            "smb.cmd": "37",
+            "smb.error_class": "0x00000000",
+            "smb.reserved": "00",
+            "smb.error_code": "0x00000000",
+            "smb.flags": "0x00000000",
+            "smb.flags_tree": {
+              "smb.flags.response": "0",
+              "smb.flags.notify": "0",
+              "smb.flags.oplock": "0",
+              "smb.flags.canon": "0",
+              "smb.flags.caseless": "0",
+              "smb.flags.receive_buffer": "0",
+              "smb.flags.lock": "0"
+            },
+            "smb.flags2": "0x00000000",
+            "smb.flags2_tree": {
+              "smb.flags2.string": "0",
+              "smb.flags2.nt_error": "0",
+              "smb.flags2.roe": "0",
+              "smb.flags2.dfs": "0",
+              "smb.flags2.esn": "0",
+              "smb.flags2.reparse_path": "0",
+              "smb.flags2.long_names_used": "0",
+              "smb.flags2.sec_sig_required": "0",
+              "smb.flags2.compressed": "0",
+              "smb.flags2.sec_sig": "0",
+              "smb.flags2.ea": "0",
+              "smb.flags2.long_names_allowed": "0"
+            },
+            "smb.pid.high": "0",
+            "smb.signature": "00:00:00:00:00:00:00:00",
+            "smb.reserved": "00:00",
+            "smb.tid": "0",
+            "smb.pid": "13181",
+            "smb.uid": "0",
+            "smb.mid": "20042"
+          },
+          "Trans Request (0x25)": {
+            "smb.wct": "17",
+            "smb.tpc": "0",
+            "smb.tdc": "6",
+            "smb.mpc": "0",
+            "smb.mdc": "0",
+            "smb.msc": "0",
+            "smb.reserved": "00",
+            "smb.transaction.flags": "0x00000002",
+            "smb.transaction.flags_tree": {
+              "smb.transaction.flags.owt": "1",
+              "smb.transaction.flags.dtid": "0"
+            },
+            "smb.timeout": "0",
+            "smb.reserved": "00:00",
+            "smb.pc": "0",
+            "smb.po": "0",
+            "smb.dc": "6",
+            "smb.data_offset": "86",
+            "smb.sc": "3",
+            "smb.reserved": "00",
+            "smb.bcc": "23",
+            "smb.trans_name": "\\MAILSLOT\\BROWSE"
+          }
+        },
+        "mailslot": {
+          "mailslot.opcode": "1",
+          "mailslot.priority": "1",
+          "mailslot.class": "2",
+          "mailslot.size": "23",
+          "mailslot.name": "\\MAILSLOT\\BROWSE"
+        },
+        "browser": {
+          "browser.command": "0x00000009",
+          "browser.backup.count": "4",
+          "browser.backup.token": "20041"
+        }
+      }
+    }
+
+
+Proposals for DB:
+	fields always the same -> upper layers: 
+		frame
+		eth
+		ip
+
+		so maybe BD with Tabels:
+			 Packet (one row represents one packet)
+
+			 Frame (prim key id = foreign key in Packet), 
+			 Ethernet (same), 
+			 IP (same),
+			 Type (if it is TCP or UDP etc and the contents) 
+
+python script (in progress...) 
+	- read in the json sniff
+	- parse seperate jsons for all tables (easier to import than one large nested json that then needs to be sanitised using sql)
+
+Then: tables can be created out of seperate jsons like here: https://www.mssqltips.com/sqlservertip/5295/different-ways-to-import-json-files-into-sql-server/
+
+
+
+
+
+
+
+
+Possible Scenario:
+FTP Login Brute Force attack:
+  When the incorrect password is sent from the client, the FTP server responds with ‘Login Incorrect’
+  message.
+  FTP servers respond with a specific response code which is 530, when an incorrect password is provided.
+
+Idea: Build Trigger in DB to look for FTP 530 response in short period of time (using frame.time).
+
+
+
