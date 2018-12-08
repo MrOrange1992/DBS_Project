@@ -32,7 +32,7 @@ with open(args.i) as inputFile, open(args.o, 'w') as sqlScript:
 		frame = packet.get('_source').get('layers').get('frame')
 		
 		sqlScript.write('INSERT INTO dbo.FRAME (dttm, time_delta, time_relative, frame_length)\n')
-		sqlScript.write("VALUES ('{}', {}, {}, {});".format(
+		sqlScript.write("VALUES ('{}', {}, {}, {});\n".format(
 			frame.get('frame.time'),
 			frame.get('frame.time_delta'),
 			frame.get('frame.time_relative'),
