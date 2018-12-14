@@ -1,4 +1,19 @@
+#!/usr/bin/python3
+# 
+#
+# author: 		Felix Rauchenwald
+#
+# description:	Script for parsing a Tshark output JSON to
+#				sql insert script for Anomalies DB 
+#				DAT18 -> DBS
+#
+# usage:		-i [tshark_output.JSON] -o [output.SQL]
+#
+
 import argparse, os, json 
+
+# Tshark tool pcap binary to JSON exmample
+# tshark -T json -r testSniff.pcap > outFile.json
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", help="Wireshark Sniff input file (JSON)", required=True)
